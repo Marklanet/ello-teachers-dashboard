@@ -1,0 +1,112 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+  height: 100%;
+
+  padding-top: 4vh;
+}
+
+.sidebar a {
+  color: #fff;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  margin-bottom: 5vh;
+}
+.sidebar .ontop span{
+  display: none;
+}
+
+.sidebar .showsidebar {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+
+.sidebar a span {
+  width: max-content;
+  background-color: #fff;
+  border-radius: 5px;
+  color: black;
+  padding: 6px 8px;
+  opacity: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  position: absolute;
+  left: 20px;
+  transform: translateX(10px);
+  pointer-events: none; /* Prevents mouse interaction */
+}
+
+.sidebar .nosidebar {
+  display: none;
+}
+
+.sidebar .showsidebar .icon {
+  display: flex;
+  flex-direction: column;
+  background-color: #335C6E;
+  box-shadow: -10px 20px 20px #00000049;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 8vh;
+  height: 8vh;
+  padding: 10px;
+  position: relative;
+}
+
+.sidebar .showsidebar .icon:hover {
+  background-color: #5ACCCC;
+}
+
+.sidebar a:hover span {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media only screen and (max-width: 900px) {
+
+  .sidebar a span{
+   left: -40px;
+  }
+ }
+@media only screen and (max-width: 768px) {
+
+ .sidebar a span{
+  left: -60px;
+ }
+}
+
+@media only screen and (max-width: 600px) {
+
+  .sidebar a span{
+   left: -90px;
+  }
+ }
+ 
+
+@media only screen and (max-width: 480px) {
+  .sidebar .showsidebar .icon {
+    width: 6vh;
+    height: 6vh;
+  }
+ .sidebar a span{
+  left: 50px;
+ }
+  .sidebar .showsidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 40%;
+    padding-top: 5%;
+  }
+
+}

@@ -1,0 +1,15 @@
+.teacher-view {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url("../../../assets/banners/banner3.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow: auto;
+}
+@media screen and (max-width: 768px) {
+    .teacher-view {
+       background-image: none;
+       background-color: var(--white-color);
+}
+}

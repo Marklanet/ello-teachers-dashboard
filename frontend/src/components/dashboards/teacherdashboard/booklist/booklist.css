@@ -1,0 +1,96 @@
+.book-list {
+    color: #333;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: #f9f9f9;
+    padding: 0px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.book-list .no-results {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #666;
+    padding: 20px;
+}
+
+.book-list .no-results img {
+    width: 10vh;
+    height: 10vh;
+    margin-bottom: 10px;
+}
+
+.book-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.book-list ul li {
+    background-color: #fff;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    padding:10px  10px ;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.book-list ul li img {
+    height: 10vh;
+    width: 10vh;
+    margin-right: 15px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.book-list ul li .book-info {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.book-list ul li .book-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.book-list ul li .book-author {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.book-list ul li button {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 5px;
+    background-color:#2a4d59; 
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.book-list ul li button:hover {
+    background-color: #5acccc;
+}
+
+@media screen and (max-width: 768px) {
+    .book-list ul li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .book-list ul li img {
+        margin-bottom: 10px;
+    }
+
+    .book-list ul li .book-info {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}

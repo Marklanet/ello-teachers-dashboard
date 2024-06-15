@@ -1,0 +1,18 @@
+.footer{
+    display: flex;
+    justify-content: flex-end;
+  background-color: var(--light-color);
+    height: max-content;
+    align-items: center;  
+    padding: 1vh 5% 0 5%;
+}
+
+.footer span{
+    font-size: 0.8rem;
+    padding: 5px 0;
+}
+@media only screen and (max-width: 600px) {
+    .footer span{
+        text-align: center;
+    }
+}

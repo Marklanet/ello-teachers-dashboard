@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800&display=swap");
+:root {
+  --white-color: #ffff;
+  --light-color: #cffafa;
+  --middle-color:  #5acccc; 
+  --dark-color: #335C6E;
+  --yellow-color:#fabd33;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scrollbar-width: 10px;
+  scrollbar-color: #5ACCCC #f1f1f1;
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--middle-color);
+  border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--middle-color);
+}
+
+body {
+  font-size: 16px; /* base font size */
+  font-family: "Mulish", sans-serif;
+}
+
+input {
+  font-family: "Mulish", sans-serif;
+}
+
+a {
+  font-weight: 500;
+  text-decoration: inherit;
+}
+
+@media (max-width: 767px) {
+  body {
+    font-size: 14px; /* smaller font size on mobile */
+  }
+}
+
+/* Common Styles */
+
+
+.light-text-gradient {
+  background: radial-gradient(
+    circle,
+    #cffafa 0%,    /* Lightest blue */
+    #b4ecec 25%,   /* Intermediate blue */
+    #99dddd 50%,   /* Midpoint blue */
+    #7fcece 75%,   /* Darker blue */
+    #5acccc 100%   /* Darkest blue */
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dark-text-gradient {
+  background: radial-gradient(
+    circle,
+    #5acccc 0%,    /* Lightest color */
+    #4fb7ba 25%,   /* Intermediate color */
+    #4593a3 50%,   /* Midpoint color */
+    #3a6f8c 75%,   /* Darker color */
+    #335C6E 100%   /* Darkest color */
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.shallow-box-shadow{
+  box-shadow:rgba(50, 50, 93, 0.9) 0px 2px
+  5px -1px, rgba(0, 0, 0, 0.4) 0px 1px 3px -1px;
+}
+.deep-box-shadow{
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+}
+

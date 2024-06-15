@@ -1,0 +1,227 @@
+.center{
+  color:  var(--white-color);
+  width: 100%;
+  height: 65%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1vh 5% 0 5%;
+  z-index: 90;
+  /*
+  background-image: url("../../../../assets/books/banner.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  */
+}
+
+.center .right-sidebar{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 20%;
+}
+
+.center .left{
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 4vh;
+  padding-bottom: 10vh;
+
+  
+}
+
+.center .left img{
+height: 20vh;
+width: 20vh;
+border-radius: 5px;
+}
+.center .left .top h2{
+  
+margin-bottom: 3vh;
+  
+}
+.center .left .top span{
+  
+  margin-top: 2vh;
+  
+}
+
+.center .middle{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 3vh;
+  width: 50%;
+ height: 100%;
+
+  
+}
+
+.center .result-holder{
+  background-color: var(--white-color);
+  height: max-content;
+  max-height: 70%;
+  width: 100%;
+  overflow-y: auto;
+  box-shadow:rgba(50, 50, 93, 0.9) 0px 2px
+    5px -1px, rgba(0, 0, 0, 0.4) 0px 1px 3px -1px;
+}
+
+
+/* Custom scrollbar for other browsers using vendor prefixes */
+.center .result-holder {
+  scrollbar-width: 10px;
+
+
+}
+
+.center .clear-icon{
+  color:  var(--dark-color);
+  cursor: pointer;
+}
+
+.center .middle input{
+  border: none;
+  outline: none;
+  flex-grow: 1;
+  padding: 5px;
+  font-size: 1rem;
+}
+
+.search-input-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: var(--white-color);
+  border: none;
+  padding: 5px 3px;
+  border-radius: 4px;
+  flex-grow: 1;
+  box-shadow:rgba(50, 50, 93, 0.9) 0px 2px
+    5px -1px, rgba(0, 0, 0, 0.4) 0px 1px 3px -1px;
+}
+
+.search-icon {
+  color: #ccc;
+  margin-right: 5px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.center .middle .search-btn{
+  padding: 10px;
+  font-size: 1rem;
+  height: 6vh;
+  margin-left: 10px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  border: none;
+  border-radius: 5px;
+  background: var(--middle-color);
+  box-shadow:rgba(50, 50, 93, 0.9) 0px 2px
+    5px -1px, rgba(0, 0, 0, 0.4) 0px 1px 3px -1px;
+  color: #ffff;
+  cursor: pointer;
+}
+
+
+.center .middle .search-btn:hover{
+  background: var(--yellow-color);
+  
+}
+
+@media screen and (max-width: 768px) {
+  .center{
+ 
+    background-image: url("../../../../assets/banners/banner3.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+   
+}
+
+  .center .middle{
+      padding-top: 4vh;
+      width: 60%;
+  }
+  .center .right-sidebar{
+
+    width: 15%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .center{
+    height: 65%;
+    
+   
+}
+
+
+  .center .left{
+      display: none;
+  }
+  .center .middle{
+      padding-top: 4vh;
+      width: 65%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+  }
+  
+}
+
+@media only screen and (max-width: 480px) {
+  .center{
+      padding: 1vh 3% 0 3%;
+      height: 65%;
+      display: flex;
+      flex-direction: row-reverse;
+      
+ 
+  
+  }
+  
+  .search-icon {
+      margin-right: 2px;
+  }
+  .center .left{
+      display: none;
+  }
+  .center .middle{
+      padding-top: 4vh;
+      width: 87%;
+  }
+  .search-input-wrapper {
+      width: 100%;
+      padding: 6px;
+      overflow: hidden;
+  }
+  .search-bar {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+  }
+  .center .middle button{
+      padding: 0px 5px;
+      font-size: 1rem;
+      margin-left: 5px;
+      margin-right: 5px;
+  }
+  .center .middle input{
+      height: 100%;
+      width: 80%;
+  }
+  .center .right-sidebar{
+
+    width: 10%;
+  }
+}
