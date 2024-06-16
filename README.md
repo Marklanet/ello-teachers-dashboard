@@ -28,20 +28,32 @@ Currently, the application supports only one reading list per teacher, but it is
 ### My Design Process
 
 **First Design**
-<img width="1013" alt="Screenshot 2024-05-15 at 19 10 51" src="./frontend/public/designs/ellodesign1.jpg">
+<img width="1013" alt="Screenshot 2024-05-15 at 19 10 51" src="./frontend/public/designs/design1.jpg">
 
 **Second Design**
-<img width="1013" alt="Screenshot 2024-05-15 at 19 10 51" src="./frontend/public/designs/ellodesign2.jpg">
+<img width="1013" alt="Screenshot 2024-05-15 at 19 10 51" src="./frontend/public/designs/design2.jpg">
 
 **Third Design**
-<img width="1013" alt="Screenshot 2024-05-15 at 19 10 51" src="./frontend/public/designs/ellodesign1.jpg">
+<img width="1013" alt="Screenshot 2024-05-15 at 19 10 51" src="./frontend/public/designs/design3.jpg">
 
 **Final Design**
-<img width="1013" alt="Screenshot 2024-05-15 at 19 10 51" src="./frontend/public/designs/ellodesign2.jpg">
+<img width="1013" alt="Screenshot 2024-05-15 at 19 10 51" src="./frontend/public/designs/design4.jpg">
 
 ### Runnning The App
 
-To run the application, switch to `src/frontend` folder and run
+To run the backend, switch to `src/backend` folder and run
+
+```bash
+npm install
+```
+
+Then, start the server with:
+
+```bash
+npm start
+```
+
+To run the frontend, switch to `src/frontend` folder and run
 
 ```bash
 npm install

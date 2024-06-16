@@ -14,7 +14,7 @@ const SlidingCarousel = () => {
   const [books, setBooks] = useState([]);
   const { readingList, setReadingList } = useContext(ReadingListContext);
 
-  const client = new GraphQLClient("http://192.168.3.106:4000/");
+  const client = new GraphQLClient("http://localhost:4000/");
 
   useEffect(() => {
     const fetchBooks = async () => {

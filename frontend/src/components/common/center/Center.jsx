@@ -14,7 +14,7 @@ const Center = () => {
   const { setReadingList } = useContext(ReadingListContext);
   const [searchClick, setSearchClick] = useState(false);
 
-  const client = new GraphQLClient("http://192.168.3.106:4000/");
+  const client = new GraphQLClient("http://localhost:4000/");
 
   const handleSearch = async (e) => {
     e.preventDefault();
