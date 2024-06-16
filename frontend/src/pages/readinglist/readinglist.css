@@ -58,10 +58,17 @@
     cursor: pointer;
   }
 
-  .reading-list .book-title,
+
   .reading-list .book-author {
     display: block;
     text-align: flex-start;
+    color: #666;
+    
+  }
+  .reading-list .book-title{
+    display: block;
+    text-align: flex-start;
+    
   }
 
   .reading-list .buttons{
@@ -128,16 +135,17 @@
        
     }
     .reading-list ul li{
-      width: 40%;
+      width: 100%;
       margin-right: 3.3%;
       padding-bottom: 2vh;
       padding: 0;
       flex-grow: 1;
       height: 45vh;
+    
      
   }
   .reading-list .book-image{
-    height: 50%;
+    height: 60%;
   }
   .reading-list ul li:nth-child(4n) {
     margin-right: 3.3%;
@@ -150,6 +158,13 @@
 
 .reading-list ul li:nth-child(odd) {
     flex-grow: 1;
+}
+.reading-list .book-author {
+font-size: 1.2rem;
+}
+.reading-list .book-title{
+  font-size: 1.1rem;
+  
 }
 
 }

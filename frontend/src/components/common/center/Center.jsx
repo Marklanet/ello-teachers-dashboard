@@ -1,12 +1,12 @@
 import React, { useState, useContext, useEffect } from "react";
 import "./center.css";
 import BookList from "../booklist/BookList";
-import Sidebar from "../../../common/sidebar/Sidebar";
-import { ReadingListContext } from "../../../context/ReadingListContext";
+import Sidebar from "../sidebar/Sidebar";
+import { ReadingListContext } from "../../context/ReadingListContext";
 import SearchIcon from "@mui/icons-material/Search";
 import CloseIcon from "@mui/icons-material/Close";
 import { GraphQLClient, gql } from "graphql-request";
-import DateTime from "../../../reusable/datetime/DateTime";
+import DateTime from "../../reusable/datetime/DateTime";
 
 const Center = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -14,7 +14,7 @@ const Center = () => {
   const { setReadingList } = useContext(ReadingListContext);
   const [searchClick, setSearchClick] = useState(false);
 
-  const client = new GraphQLClient("http://localhost:4000/");
+  const client = new GraphQLClient("http://192.168.3.106:4000/");
 
   const handleSearch = async (e) => {
     e.preventDefault();

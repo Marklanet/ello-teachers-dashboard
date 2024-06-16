@@ -7,7 +7,7 @@ const ReadingList = () => {
   const { readingList, setReadingList } = useContext(ReadingListContext);
   const Toast = Swal.mixin({
     toast: true,
-    position: "top-end",
+    position: "bottom-end",
     showConfirmButton: false,
     timer: 1000,
     iconColor: "var(--dark-color)",

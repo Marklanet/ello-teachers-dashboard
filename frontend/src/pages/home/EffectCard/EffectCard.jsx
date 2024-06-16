@@ -1,16 +1,14 @@
 import React, { useEffect, useState, useContext } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay } from "swiper/modules";
-import { Scrollbar } from "swiper/modules";
 import { GraphQLClient, gql } from "graphql-request";
-import Swal from "sweetalert2";
 import "swiper/css";
-import "./slidingcarousel.css";
-import "swiper/css/navigation";
-import "swiper/css/scrollbar";
-import { ReadingListContext } from "../../context/ReadingListContext";
+import Swal from "sweetalert2";
+import "swiper/css/effect-cards";
+import "./effectcard.css";
+import { EffectCards } from "swiper/modules";
+import { ReadingListContext } from "../../../components/context/ReadingListContext";
 
-const SlidingCarousel = () => {
+const EffectCard = () => {
   const [books, setBooks] = useState([]);
   const { readingList, setReadingList } = useContext(ReadingListContext);
 
@@ -29,9 +27,9 @@ const SlidingCarousel = () => {
       `;
       try {
         const data = await client.request(query);
-        // Select 12 random books
+        // Select 10 random books
         const shuffledBooks = data.books.sort(() => 0.5 - Math.random());
-        setBooks(shuffledBooks.slice(0, 12));
+        setBooks(shuffledBooks.slice(0, 10));
       } catch (error) {
         console.error("Error fetching books:", error);
       }
@@ -39,6 +37,7 @@ const SlidingCarousel = () => {
 
     fetchBooks();
   }, []);
+
   const Toast = Swal.mixin({
     toast: true,
     position: "top-end",
@@ -76,54 +75,34 @@ const SlidingCarousel = () => {
   };
 
   return (
-    <section className="sliding-carousel">
-      <div className="sliding">
-        <Swiper
-          direction={"horizontal"}
-          slidesPerView={4}
-          spaceBetween={25}
-          pagination={{
-            clickable: true,
-          }}
-          loop={true}
-          modules={[Navigation, Autoplay, Scrollbar]}
-          className="mySwiper"
-          autoplay={{ delay: 2000 }}
-        >
-          {books.map((book, index) => (
-            <SwiperSlide key={index}>
-              <div className="box">
-                <img src={book.coverPhotoURL} alt={`Slide ${index + 1}`} />
-                <div className="bottom">
-                  <span>{book.title}</span>
-                  <button onClick={() => addToReadingList(book)}>
-                    Add to List
-                  </button>
-                </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
-
-      {/* Additional Swiper for smaller screens */}
-      <div className="mobile-sliding">
+    <div className="effect-card">
+      <Swiper
+        effect={"cards"}
+        grabCursor={true}
+        loop={true}
+        modules={[EffectCards]}
+        className="mySwiper"
+      >
         {books.map((book, index) => (
           <SwiperSlide key={index}>
             <div className="box">
-              <img src={book.coverPhotoURL} alt={`Slide ${index + 1}`} />
               <div className="bottom">
                 <span>{book.title}</span>
                 <button onClick={() => addToReadingList(book)}>
                   Add to List
                 </button>
               </div>
+              <img
+                src={book.coverPhotoURL}
+                alt={`Slide ${index + 1}`}
+                onClick={() => addToReadingList(book)}
+              />
             </div>
           </SwiperSlide>
         ))}
-      </div>
-    </section>
+      </Swiper>
+    </div>
   );
 };
 
-export default SlidingCarousel;
+export default EffectCard;

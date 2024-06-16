@@ -2,15 +2,21 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  z-index: 1;
+  justify-content: space-between; 
   height: 100%;
-
   padding-top: 4vh;
 }
 
 .sidebar a {
-  color: #fff;
+  color: var(--white-color);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  margin-bottom: 5vh;
+}
+.sidebar .holder {
+  color: var(--white-color);
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -23,7 +29,6 @@
 
 .sidebar .showsidebar {
   width: 100%;
-
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -32,14 +37,16 @@
 
 .sidebar a span {
   width: max-content;
-  background-color: #fff;
+  background-color: var(--white-color);
   border-radius: 5px;
-  color: black;
+  color: var(--dark-color);
   padding: 6px 8px;
   opacity: 0;
   white-space: nowrap;
   overflow: hidden;
   transition: opacity 0.3s ease, transform 0.3s ease;
+  box-shadow:rgba(50, 50, 93, 0.9) 0px 2px
+  5px -1px, rgba(0, 0, 0, 0.4) 0px 1px 3px -1px;
   position: absolute;
   left: 20px;
   transform: translateX(10px);
@@ -53,7 +60,7 @@
 .sidebar .showsidebar .icon {
   display: flex;
   flex-direction: column;
-  background-color: #335C6E;
+  background-color: var(--dark-color);
   box-shadow: -10px 20px 20px #00000049;
   cursor: pointer;
   border-radius: 50%;
@@ -62,9 +69,12 @@
   padding: 10px;
   position: relative;
 }
-
+.sidebar .active-link .icon{
+  background-color: var(--middle-color);
+  
+}
 .sidebar .showsidebar .icon:hover {
-  background-color: #5ACCCC;
+  background-color: var(--middle-color);
 }
 
 .sidebar a:hover span {
@@ -94,19 +104,52 @@
  
 
 @media only screen and (max-width: 480px) {
+  .sidebar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+    
+    
+    
+  }
   .sidebar .showsidebar .icon {
     width: 6vh;
     height: 6vh;
+  
   }
  .sidebar a span{
-  left: 50px;
+  left: -100%;
+  top: -6vh;
+background-color: var(--light-color);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  position: absolute;
+  transform: translateY(40px);
+  pointer-events: none; /* Prevents mouse interaction */
  }
   .sidebar .showsidebar {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
-    padding-bottom: 40%;
-    padding-top: 5%;
+    transition: all 2s ease;
+    padding-bottom: 0;
+    padding-top: 0%;
   }
-
+  .sidebar .showsidebar {
+    width: 100%;
+    padding-bottom: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .sidebar a {
+    color: var(--white-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 0vh;
+    
+  }
 }

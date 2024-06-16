@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import "./booklist.css";
-import searchicon from "../../../../assets/icons/searchicon.svg";
+import searchicon from "../../../assets/icons/searchicon.svg";
 import Swal from "sweetalert2";
-import { ReadingListContext } from "../../../context/ReadingListContext";
+import { ReadingListContext } from "../../context/ReadingListContext";
 
 const BookList = ({ searchClick, books }) => {
   const Toast = Swal.mixin({
@@ -58,13 +58,19 @@ const BookList = ({ searchClick, books }) => {
           {books.map((book, index) => (
             <li key={index}>
               <img src={book.coverPhotoURL} alt="Book Cover" />
-              <div className="book-info">
-                <span className="book-title">{book.title}</span>
-                <span className="book-author">by {book.author}</span>
+              <div className="details">
+                <div className="book-info">
+                  <span className="book-title">{book.title}</span>
+                  <span className="book-author">by {book.author}</span>
+                </div>
+
+                <button
+                  onClick={() => addToReadingList(book)}
+                  className="add-btn"
+                >
+                  Add to List
+                </button>
               </div>
-              <button onClick={() => addToReadingList(book)}>
-                Add to List
-              </button>
             </li>
           ))}
         </ul>

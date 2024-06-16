@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Link, useMatch } from "react-router-dom";
 import "./sidebar.css";
-import ExpandMoreRoundedIcon from "@mui/icons-material/ExpandMoreRounded";
 import ViewStreamIcon from "@mui/icons-material/ViewStream";
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 import HomeIcon from "@mui/icons-material/Home";
+import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import LibraryBooksRoundedIcon from "@mui/icons-material/LibraryBooksRounded";
 
 const Sidebar = () => {
@@ -29,14 +29,14 @@ const Sidebar = () => {
   return (
     <div className="sidebar">
       <div className="showsidebar ontop">
-        <Link to="/home" onClick={handleClick}>
+        <div className="holder" onClick={handleClick}>
           <span>Dashboard</span>
           {click ? (
-            <ExpandMoreRoundedIcon className="icon" />
-          ) : (
             <ViewStreamIcon className="icon" />
+          ) : (
+            <CloseRoundedIcon className="icon" />
           )}
-        </Link>
+        </div>
       </div>
 
       <div className={showsidebar ? "showsidebar" : "nosidebar"}>

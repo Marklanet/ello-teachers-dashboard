@@ -1,6 +1,7 @@
 import React from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import Swal from "sweetalert2";
 import GoogleIcon from "@mui/icons-material/Google";
 import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
@@ -23,6 +24,21 @@ const Signin = ({ chooseUser }) => {
     password: Yup.string().required("Password is required"),
   });
 
+  //Handling alerts
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 3000,
+    iconColor: "var(--middle-color)",
+    timerProgressBar: true,
+
+    didOpen: (toast) => {
+      toast.onmouseenter = Swal.stopTimer;
+      toast.onmouseleave = Swal.resumeTimer;
+    },
+  });
+
   // Formik form handling
   const formik = useFormik({
     initialValues: {
@@ -38,13 +54,22 @@ const Signin = ({ chooseUser }) => {
         );
         if (response.success) {
           chooseUser({ username: values.username });
-          alert("Login successful");
+          Toast.fire({
+            icon: "success",
+            title: `Login Success`,
+          });
         } else {
-          alert(response.message);
+          Toast.fire({
+            icon: "error",
+            title: `Error: ${response.message}`,
+          });
         }
       } catch (err) {
         console.error(err);
-        alert("Error occurred during login");
+        Toast.fire({
+          icon: "error",
+          title: `An error occurred during login`,
+        });
       }
     },
   });
@@ -56,32 +81,30 @@ const Signin = ({ chooseUser }) => {
         <AccountCircleIcon className="icon" />
         <input
           type="text"
-          placeholder="Username"
+          placeholder={
+            formik.errors.username ? formik.errors.username : "Username"
+          }
           name="username"
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.username}
         />
-        {formik.touched.username && formik.errors.username && (
-          <span className="error">{formik.errors.username}</span>
-        )}
       </div>
       <div className="input-field">
         <LockIcon className="icon" />
         <input
           type="password"
-          placeholder="Password"
+          placeholder={
+            formik.errors.password ? formik.errors.password : "Password"
+          }
           name="password"
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.password}
         />
-        {formik.touched.password && formik.errors.password && (
-          <span className="error">{formik.errors.password}</span>
-        )}
       </div>
       <button type="submit" className="btn2 btn solid">
-        Login
+        Sign In
       </button>
       <p className="social-text">Or Sign in with social platforms</p>
       <div className="social-media">

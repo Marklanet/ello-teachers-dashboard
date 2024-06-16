@@ -67,8 +67,10 @@
 .sliding-carousel .swiper-slide img {
   display: block;
   width: 100%;
+  height: 25vh;
   object-fit: cover;
 }
+
 
 
 
@@ -89,21 +91,21 @@
 
   .sliding-carousel .swiper-slide {
    
-    min-width: 42vw
-    
-   
-    
+    min-width: 42vw;
+    margin-bottom: 3vh;
+
   }
   
-
-
   .sliding-carousel  .sliding{
     display: none;
   }
  
-.sliding-carousel .swiper-slide .box img{
-    height: 35vw;
-  
+
+  .sliding-carousel .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 25vh;
+    object-fit: cover;
   }
   
  
