@@ -27,16 +27,25 @@ Currently, the application supports only one reading list per teacher, but it is
 
 ### My Design Process
 
-**First Design**
+**1st Design**
+<img width="1013" alt="Screenshot 2024-05-15 at 19 10 51" src="./frontend/public/designs/design7.jpg">
+
+**2nd Design**
+<img width="1013" alt="Screenshot 2024-05-15 at 19 10 51" src="./frontend/public/designs/design6.jpg">
+
+**3rd Design**
 <img width="1013" alt="Screenshot 2024-05-15 at 19 10 51" src="./frontend/public/designs/design1.jpg">
 
-**Second Design**
+**4rth Design**
 <img width="1013" alt="Screenshot 2024-05-15 at 19 10 51" src="./frontend/public/designs/design2.jpg">
 
-**Third Design**
+**5th Design**
 <img width="1013" alt="Screenshot 2024-05-15 at 19 10 51" src="./frontend/public/designs/design3.jpg">
 
-**Final Design**
+**6th Design**
+<img width="1013" alt="Screenshot 2024-05-15 at 19 10 51" src="./frontend/public/designs/design5.jpg">
+
+**Last Design**
 <img width="1013" alt="Screenshot 2024-05-15 at 19 10 51" src="./frontend/public/designs/design4.jpg">
 
 ### Runnning The App
@@ -63,6 +72,20 @@ Then, start the app with:
 
 ```bash
 npm run dev
+```
+
+Connecting backend url
+
+switch to `src/frontend` folder and create a new file called
+
+```bash
+ .env.local
+```
+
+inside the file, paste this code
+
+```bash
+ VITE_BACKEND_URL=http://localhost:4000/
 ```
 
 ### Styling Guidelines
