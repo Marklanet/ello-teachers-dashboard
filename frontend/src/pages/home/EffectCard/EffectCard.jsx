@@ -11,7 +11,11 @@ import { ReadingListContext } from "../../../components/context/ReadingListConte
 const EffectCard = () => {
   const [books, setBooks] = useState([]);
   const { readingList, setReadingList } = useContext(ReadingListContext);
-  const client = new GraphQLClient(`http://localhost:4000/`); // Using the proxy
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
+  if (!backendUrl) {
+    console.error("VITE_BACKEND_URL is not defined");
+  }
+  const client = new GraphQLClient(backendUrl);
 
   useEffect(() => {
     const fetchBooks = async () => {
@@ -86,7 +90,6 @@ const EffectCard = () => {
           <SwiperSlide key={index}>
             <div className="box">
               <div className="bottom">
-                <span>{book.title}</span>
                 <button onClick={() => addToReadingList(book)}>
                   Add to List
                 </button>
@@ -97,9 +100,11 @@ const EffectCard = () => {
                 onClick={() => addToReadingList(book)}
               />
             </div>
+            <span>{book.title}</span>
           </SwiperSlide>
         ))}
       </Swiper>
+      <span className="tap dark-text-gradient">Tap to Add to Reading List</span>
     </div>
   );
 };

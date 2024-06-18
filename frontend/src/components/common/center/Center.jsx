@@ -14,7 +14,12 @@ const Center = () => {
   const { setReadingList } = useContext(ReadingListContext);
   const [searchClick, setSearchClick] = useState(false);
 
-  const client = new GraphQLClient("http://localhost:4000/");
+  // Access the Vite environment variable
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
+  if (!backendUrl) {
+    console.error("VITE_BACKEND_URL is not defined");
+  }
+  const client = new GraphQLClient(backendUrl);
 
   const handleSearch = async (e) => {
     e.preventDefault();

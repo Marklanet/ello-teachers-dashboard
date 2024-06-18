@@ -14,7 +14,11 @@ const SlidingCarousel = () => {
   const [books, setBooks] = useState([]);
   const { readingList, setReadingList } = useContext(ReadingListContext);
 
-  const client = new GraphQLClient("http://localhost:4000/");
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
+  if (!backendUrl) {
+    console.error("VITE_BACKEND_URL is not defined");
+  }
+  const client = new GraphQLClient(backendUrl);
 
   useEffect(() => {
     const fetchBooks = async () => {

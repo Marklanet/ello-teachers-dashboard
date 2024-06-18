@@ -1,5 +1,5 @@
 .home-page{
-    background-color: var(--white-color);
+   background-color: var(--white-color);
     width: 100%;
     min-height: 50vh;
     padding: 4vh 5% 5vh 5%;
@@ -8,6 +8,7 @@
 
 .home-page h2{
     margin: 3vh 0 4vh 0;
+    text-align: center;
 }
 
 @media only screen and (max-width: 480px) {

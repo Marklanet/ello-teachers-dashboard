@@ -1,8 +1,15 @@
+.effect-card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
 .effect-card .swiper {
   width: 100%;
   max-width: 500px;
-  height: 320px;
+  height: 350px;
   margin: auto;
+
 }
 
 .effect-card .swiper-slide {
@@ -13,8 +20,7 @@
   font-size: 22px;
   font-weight: bold;
   color: var(--dark-color);
-  
- 
+
 }
 
 .effect-card  .box {
@@ -31,6 +37,14 @@
 
 .effect-card  button {
   margin-top: 5px;
+}
+
+.effect-card .tap{
+  text-align: center !important;
+justify-self: center;
+  padding: 3vh 0 4vh 0;
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
 @media (max-width: 768px) {
