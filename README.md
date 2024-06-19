@@ -8,7 +8,7 @@ I am really excited about the opportunity to join the team and have designed thi
 
 ## About the Ello Teachers Dashboard
 
-This is a full-stack repository containing two folders: `frontend` and `backend`. The backend was provided. Twinx Clutario, clarified via email that I should use it as-is. Therefore, full user authentication and other functionalities are not implemented on the backend. Please use "admin" as the username and "password" as the password to get authenticated.
+This is a full-stack repository containing two folders: `frontend` and `backend`. The backend was provided. Twinx Clutario, clarified via email that I should use it as-is. Therefore, full user authentication and other functionalities are not implemented on the backend. Please use `"admin"` as the username and `"password"` as the password to get authenticated.
 
 **Note:** The backend does not include user authentication.
 
